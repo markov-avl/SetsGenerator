@@ -1,11 +1,11 @@
 #include "combinations.h"
 
 int main() {
-    const int N = 6;
-    const int K = 3;
+    int k = 3;
+    int set[] = {1, 2, 3, 4, 5, 9};
 
-    int set[N] {};
-    generate_combinations(set, N, K);
+    int length = sizeof(set) / sizeof(set[0]);
+    generate_combinations(set, length, k);
 
     return 0;
 }

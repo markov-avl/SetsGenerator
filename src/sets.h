@@ -11,10 +11,10 @@ public:
 };
 
 
-template <typename TYPE>
-bool isSet(TYPE set, int n);
-template <typename TYPE>
-void printSet(TYPE set, int n);
+// template <typename TYPE>
+bool isSet(const int* set, int n);
+// template <typename TYPE>
+void printSet(const int* set, int n);
 
 
 #endif

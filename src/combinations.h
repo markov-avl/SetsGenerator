@@ -13,8 +13,8 @@ public:
 };
 
 
-template <typename TYPE>
-void generate_combinations(TYPE* set, int n, int k);
+// template <typename TYPE>
+void generate_combinations(const int* set, int n, int k);
 
 
 #endif

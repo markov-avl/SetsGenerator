@@ -11,9 +11,9 @@ const char* SetException::what() const noexcept {
 }
 
 
-template <typename TYPE>
-bool isSet(TYPE* set, int n) {
-    TYPE element;
+// template <typename TYPE>
+bool isSet(const int* set, int n) {
+    int element;
     for (int i = 0; i < n - 1; ++i) {
         element = set[i];
         for (int j = i + 1; j < n; ++j) {
@@ -25,9 +25,12 @@ bool isSet(TYPE* set, int n) {
     return true;
 }
 
-template <typename TYPE>
-void printSet(TYPE* set, int n) {
+// template <typename TYPE>
+void printSet(const int* set, int n) {
     for (int i = 0; i < n; ++i) {
-        std::cout << (i < n - 1 ? set[i] << ", " : set[i]);
+        std::cout << set[i];
+        if (i < n - 1) {
+            std::cout << ", ";
+        }
     }
 }
