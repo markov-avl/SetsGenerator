@@ -11,10 +11,29 @@ public:
 };
 
 
-// template <typename TYPE>
-bool isSet(const int* set, int n);
-// template <typename TYPE>
-void printSet(const int* set, int n);
+template <class TYPE>
+bool isSet(const TYPE* set, int n) {
+    int element;
+    for (int i = 0; i < n - 1; ++i) {
+        element = set[i];
+        for (int j = i + 1; j < n; ++j) {
+            if (element == set[j]) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+template <class TYPE>
+void printSet(const TYPE* set, int n) {
+    for (int i = 0; i < n; ++i) {
+        std::cout << set[i];
+        if (i < n - 1) {
+            std::cout << ", ";
+        }
+    }
+}
 
 
 #endif
