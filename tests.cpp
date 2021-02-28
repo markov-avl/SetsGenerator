@@ -74,19 +74,16 @@ TEST(generateCombinations, from_4_choose_2) {
                                                       "4. 10, 20\n"
                                                       "5. 10, 30\n"
                                                       "6. 10, 40\n");
-    /* this test does not work for some reasons
-     * this captures codes of chars and compares them with char signs, so test fails
 
-    int charSet[N] = {'5', 'f', '9', 'r'};
+    char charSet[N] = {'5', 'f', '9', '!'};
     testing::internal::CaptureStdout();
     generateCombinations(charSet, N, K);
-    EXPECT_EQ(testing::internal::GetCapturedStdout(), "1. 9, r\N"
-                                                      "2. f, 9\N"
-                                                      "3. f, r\N"
-                                                      "4. 5, f\N"
-                                                      "5. 5, 9\N"
-                                                      "6. 5, r\N");
-    */
+    EXPECT_EQ(testing::internal::GetCapturedStdout(), "1. 9, !\n"
+                                                      "2. f, 9\n"
+                                                      "3. f, !\n"
+                                                      "4. 5, f\n"
+                                                      "5. 5, 9\n"
+                                                      "6. 5, !\n");
 }
 
 
