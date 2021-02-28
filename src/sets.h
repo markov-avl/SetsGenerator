@@ -11,13 +11,11 @@ public:
 };
 
 
-template <class TYPE>
+template <typename TYPE>
 bool isSet(const TYPE* set, int n) {
-    int element;
     for (int i = 0; i < n - 1; ++i) {
-        element = set[i];
         for (int j = i + 1; j < n; ++j) {
-            if (element == set[j]) {
+            if (set[i] == set[j]) {
                 return false;
             }
         }
@@ -25,7 +23,7 @@ bool isSet(const TYPE* set, int n) {
     return true;
 }
 
-template <class TYPE>
+template <typename TYPE>
 void printSet(const TYPE* set, int n) {
     for (int i = 0; i < n; ++i) {
         std::cout << set[i];

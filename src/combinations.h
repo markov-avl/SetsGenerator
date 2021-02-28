@@ -14,7 +14,7 @@ public:
 };
 
 
-template <class TYPE>
+template <typename TYPE>
 void generateCombinations(const TYPE *set, int n, int k) {
     // Algorithm condition check: n >= k > 0
     if (n < 1) {
@@ -31,8 +31,8 @@ void generateCombinations(const TYPE *set, int n, int k) {
     }
 
     TYPE* subset = new TYPE[k];
-    int* g = new int[n + 1]; // надо проверить, действительно ли используются n + 1 элементов
-    int* p = new int[n + 1]; // надо проверить, действительно ли используются n + 1 элементов
+    int* g = new int[n + 1];
+    int* p = new int[n + 1];
     int i, j, t, s;
 
     for (j = 0; j < k; ++j) {
@@ -50,7 +50,7 @@ void generateCombinations(const TYPE *set, int n, int k) {
 
     int num = 1;
     while (i != n) {
-        // вывод подмножества
+        // subset output
         for (s = 0, j = n - 1; j >= 0; --j) {
             if (g[j] == 1) {
                 subset[s++] = set[n - j - 1];
