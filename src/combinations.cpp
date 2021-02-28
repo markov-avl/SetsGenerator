@@ -1,11 +1,11 @@
 #include "combinations.h"
 
 
-CombinationsException::CombinationsException(std::string error) {
+CombinationException::CombinationException(std::string error) {
     this->error = std::move(error);
 }
 
-const char* CombinationsException::what() const noexcept {
+const char* CombinationException::what() const noexcept {
     return this->error.c_str();
 }
 

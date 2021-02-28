@@ -5,11 +5,11 @@
 #include "sets.h"
 
 
-class CombinationsException: public std::exception {
+class CombinationException: public std::exception {
 private:
     std::string error;
 public:
-    explicit CombinationsException(std::string error);
+    explicit CombinationException(std::string error);
     const char* what() const noexcept override;
 };
 
@@ -18,10 +18,10 @@ template <typename TYPE>
 void generateCombinations(const TYPE *set, int n, int k) {
     // Algorithm condition check: n >= k > 0
     if (n < 1) {
-        throw CombinationsException("The cardinality of the input set must be greater than 0");
+        throw CombinationException("The cardinality of the input set must be greater than 0");
     }
     if (k > n || k < 1) {
-        throw CombinationsException("The cardinality of the required subsets must be greater than 0 "
+        throw CombinationException("The cardinality of the required subsets must be greater than 0 "
                                     "and not exceed the cardinality of the input set");
     }
 
